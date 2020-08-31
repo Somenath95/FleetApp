@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class VehicleMovementController {
+public class VehicleModelController {
 
-	@GetMapping("/vehicle-movements")
-	public String getVehicleMovements() {
-		return "vehicleMovement";
+	@GetMapping("/vehicle-models")
+	public String getVehicleModels() {
+		return "vehicleModel";
 	}
 }
