@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import io.example.fleetapp.models.Country;
 import io.example.fleetapp.services.CountryService;
@@ -23,5 +24,11 @@ public class CountryController {
 		model.addAttribute("countries", countryList);
 		
 		return "country";
+	}
+	
+	@PostMapping("/countries/addNew")
+	public String addNew(Country country) {
+		countryService.saveCountry(country);
+		return "redirect:/countries";
 	}
 }
